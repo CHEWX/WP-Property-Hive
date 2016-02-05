@@ -42,6 +42,7 @@ class PH_Admin_Meta_Boxes {
         add_action( 'propertyhive_process_property_meta', 'PH_Meta_Box_Property_Residential_Details::save', 20, 2 );
         add_action( 'propertyhive_process_property_meta', 'PH_Meta_Box_Property_Residential_Lettings_details::save', 25, 2 );
         add_action( 'propertyhive_process_property_meta', 'PH_Meta_Box_Property_Residential_Sales_details::save', 30, 2 );
+        add_action( 'propertyhive_process_property_meta', 'PH_Meta_Box_Property_Commercial_details::save', 30, 2 );
         
         add_action( 'propertyhive_process_property_meta', 'PH_Meta_Box_Property_Marketing::save', 35, 2 );
         
@@ -254,9 +255,10 @@ class PH_Admin_Meta_Boxes {
         add_meta_box( 'propertyhive-property-residential-sales-details', __( 'Residential Sales Details', 'propertyhive' ), 'PH_Meta_Box_Property_Residential_Sales_Details::output', 'property', 'normal', 'high' );
         add_meta_box( 'propertyhive-property-residential-lettings-details', __( 'Residential Lettings Details', 'propertyhive' ), 'PH_Meta_Box_Property_Residential_Lettings_Details::output', 'property', 'normal', 'high' );
         add_meta_box( 'propertyhive-property-residential-details', __( 'Residential Details', 'propertyhive' ), 'PH_Meta_Box_Property_Residential_Details::output', 'property', 'normal', 'high' );
+        add_meta_box( 'propertyhive-property-commercial-details', __( 'Commercial Details', 'propertyhive' ), 'PH_Meta_Box_Property_Commercial_Details::output', 'property', 'normal', 'high' );
         $tabs['tab_details'] = array(
             'name' => __( 'Details', 'propertyhive' ),
-            'metabox_ids' => array('propertyhive-property-department', 'propertyhive-property-residential-sales-details', 'propertyhive-property-residential-lettings-details', 'propertyhive-property-residential-details'),
+            'metabox_ids' => array('propertyhive-property-department', 'propertyhive-property-residential-sales-details', 'propertyhive-property-residential-lettings-details', 'propertyhive-property-residential-details', 'propertyhive-property-commercial-details'),
             'post_type' => 'property'
         );
         
